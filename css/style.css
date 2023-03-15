@@ -1,0 +1,199 @@
+:root {
+  --dark-color: #19283f;
+  --cyen-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100000px;
+}
+
+body.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-btn {
+  background: var(--red-color);
+  color: var(--yellow-color);
+  padding: 0.5rem 1.5rem;
+  transition: 0.4s;
+}
+
+.main-btn:hover {
+  background: #c12d43;
+  color: var(--yellow-color);
+}
+
+.main-title::before {
+  content: "";
+  width: 120px;
+  height: 2px;
+  background: var(--cyen-color);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.overlay-popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.overlay-popup .popup-box {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+}
+
+@media (max-width: 767px) {
+  .overlay-popup .popup-box {
+    width: 90%;
+  }
+}
+
+.overlay-popup .popup-box img {
+  border-radius: inherit;
+}
+
+@media (max-width: 767px) {
+  .overlay-popup .popup-box img {
+    width: 100%;
+  }
+}
+
+.overlay-popup .popup-box .close-btn {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background: rgb(45, 45, 45);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: arial, tahoma;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/****************************** Start NavBar ******************************/
+.navbar {
+  background: var(--dark-color);
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:active {
+  color: var(--cyen-color);
+}
+
+.navbar .navbar-toggler {
+  color: white;
+  font-size: 25px;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] {
+  border-color: var(--cyen-color);
+}
+
+.navbar .search {
+  color: white;
+  font-size: 20px;
+  border-left: 1px solid var(--cyen-color);
+  cursor: pointer;
+}
+/****************************** End NavBar ******************************/
+
+/****************************** Start Landing Section ******************************/
+.landing {
+  background: var(--dark-color);
+  height: calc(100vh - 72px);
+}
+
+.landing p {
+  font-size: 15px;
+}
+
+.landing .main-btn {
+  padding: 0.5rem 2.5rem;
+}
+/****************************** End Landing Section ******************************/
+
+/****************************** Start Features Section ******************************/
+.features .icon-holder {
+  height: 200px;
+}
+
+.features .icon-holder svg {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.features .icon-holder .number {
+  font-size: 12rem;
+  color: var(--section-color);
+}
+
+.features .icon-holder .icon {
+  color: var(--cyen-color);
+  font-size: 4rem;
+}
+/****************************** End Features Section ******************************/
+
+/****************************** Start Works Section ******************************/
+.works {
+  background: var(--section-color);
+}
+
+.our-works ul li {
+  padding: 0.5rem 1rem;
+  transition: 0.4s;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.our-works ul li.active {
+  background: var(--red-color);
+  color: var(--yellow-color);
+}
+
+.our-works ul li:not(.active):hover {
+  color: var(--red-color);
+}
+
+.our-works .box {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.our-works .box:hover img {
+  transform: scale(1.1);
+  transition: .4s;
+}
+/****************************** End Works Section ******************************/
