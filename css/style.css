@@ -8,7 +8,6 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  height: 100000px;
 }
 
 body.stop-scrolling {
@@ -123,10 +122,12 @@ body.stop-scrolling {
 }
 
 .navbar .search {
-  color: white;
-  font-size: 20px;
   border-left: 1px solid var(--cyen-color);
   cursor: pointer;
+}
+
+.active {
+  color: var(--cyen-color);
 }
 /****************************** End NavBar ******************************/
 
@@ -192,8 +193,140 @@ body.stop-scrolling {
   cursor: pointer;
 }
 
+.our-works .box img {
+  transform: scale(1);
+  transition: 0.4s ease-in-out;
+}
+
 .our-works .box:hover img {
   transform: scale(1.1);
-  transition: .4s;
 }
 /****************************** End Works Section ******************************/
+
+/****************************** Start Stuff Section ******************************/
+.stuff .description {
+  max-width: 500px;
+}
+/****************************** End Stuff Section ******************************/
+
+/****************************** Start Team Section ******************************/
+.team {
+  background: var(--section-color);
+}
+
+.team h2 {
+  color: var(--yellow-color);
+}
+
+.team .box h5 {
+  background: var(--cyen-color);
+}
+
+.team .box blockquote {
+  height: 152px;
+}
+/****************************** End Team Section ******************************/
+
+/****************************** Start Tech And Projet Section ******************************/
+.project {
+  background: var(--dark-color);
+  padding: 60px 0;
+}
+/****************************** End Tech And Projet Section ******************************/
+
+/****************************** Start Subscribe Section ******************************/
+.subscribe {
+  background: var(--yellow-color);
+}
+
+.subscribe .email {
+  border-color: var(--cyen-color) !important; 
+}
+
+.subscribe .email:focus {
+  outline: none;
+}
+
+.subscribe .email:focus::placeholder {
+  transition: 0.4s;
+  opacity: 0;
+}
+
+.subscribe .email::placeholder {
+  color: white;
+}
+
+.subscribe .submit {
+  background: var(--dark-color);
+  color: var(--yellow-color);
+}
+/****************************** End Subscribe Section ******************************/
+
+/****************************** start Footer Section ******************************/
+.footer {
+  background: var(--dark-color);
+}
+
+.footer .copyright > span {
+  color: var(--cyen-color);
+}
+
+.footer .copyright div span {
+  color: var(--yellow-color);
+}
+
+.footer .links li a {
+  text-decoration: none;
+  color: #ffffff80;
+}
+
+.footer .links li {
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.footer .links li:hover {
+  margin-left: 5px;
+}
+
+.footer .contact ul .svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer .facebook {
+  background: #1877f2;
+  transition: 0.4s;
+}
+
+.footer .facebook:hover {
+  background: #1365d0;
+}
+
+.footer .twitter {
+  background: #1da1f2;
+  transition: 0.4s;
+}
+
+.footer .twitter:hover {
+  background: #2593d8;
+}
+
+.footer .linkedin {
+  background: #0077b5;
+  transition: 0.4s;
+}
+
+.footer .linkedin:hover {
+  background: #036397;
+}
+
+.footer .youtube {
+  background: #ff0000;
+  transition: 0.4s;
+}
+
+.footer .youtube:hover {
+  background: #d20202;
+}
+/****************************** End Footer Section ******************************/
