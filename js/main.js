@@ -1,5 +1,6 @@
+// Filters Works
 let filters = document.querySelectorAll(".our-works ul li"),
-  imgFilters = document.querySelectorAll(".img");
+  imgFilters = document.querySelectorAll(".works .img");
 
 filters.forEach((item) => {
   item.addEventListener("click", () => {
@@ -14,14 +15,11 @@ filters.forEach((item) => {
 
 function filter(img) {
   imgFilters.forEach((el) => {
-    if (el.dataset.img === img.dataset.img) {
-      el.style.display = "flex";
-    } else {
-      el.style.display = "none";
-    }
-    if (img.dataset.img === "all") {
-      el.style.display = "block";
-    }
+    el.style.display = "none";
+  });
+
+  document.querySelectorAll(img.dataset.cat).forEach((element) => {
+    element.style.display = "block";
   });
 }
 
@@ -51,7 +49,8 @@ imgs.forEach((img) => {
 
     document.body.appendChild(overlay);
 
-    document.body.classList.add("stop-scrolling");
+    // document.body.classList.add("stop-scrolling");
+
   });
 });
 
