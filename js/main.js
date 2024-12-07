@@ -1,3 +1,33 @@
+// Select all sections and nav links
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.5, // Change threshold as needed (e.g., 0.5 means the section should be at least 50% visible)
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    const id = entry.target.id;
+    const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+
+    if (entry.isIntersecting) {
+      // Add active class to the nav link
+      navLink.classList.add("active");
+    } else {
+      // Remove active class if section is not in view
+      navLink.classList.remove("active");
+    }
+  });
+}, options);
+
+// Observe each section
+sections.forEach((section) => {
+  observer.observe(section);
+});
+
 // Filters Works
 let filters = document.querySelectorAll(".our-works ul li"),
   imgFilters = document.querySelectorAll(".works .img");
@@ -50,7 +80,6 @@ imgs.forEach((img) => {
     document.body.appendChild(overlay);
 
     // document.body.classList.add("stop-scrolling");
-
   });
 });
 
@@ -69,3 +98,23 @@ document.addEventListener("click", (e) => {
     document.body.classList.remove("stop-scrolling");
   }
 });
+
+// Get the button
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Show the button when the user scrolls down 100px from the top
+window.onscroll = () => {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    scrollToTopBtn.classList.add("appear__ScrollToTopBtn");
+  } else {
+    scrollToTopBtn.classList.remove("appear__ScrollToTopBtn");
+  }
+};
+
+// Scroll to top when the button is clicked
+scrollToTopBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};

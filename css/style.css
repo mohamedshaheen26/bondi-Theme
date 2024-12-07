@@ -93,6 +93,32 @@ body.stop-scrolling {
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* Scroll to Top Button Style */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  background-color: var(--cyen-color);
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+#scrollToTopBtn:hover {
+  opacity: 1;
+  background-color: #2ea9a5;
+}
+
+.appear__ScrollToTopBtn {
+  opacity: 1 !important;
+}
 /****************************** Start NavBar ******************************/
 .navbar {
   background: var(--dark-color);
@@ -127,7 +153,7 @@ body.stop-scrolling {
 }
 
 .active {
-  color: var(--cyen-color);
+  color: var(--cyen-color) !important;
 }
 /****************************** End NavBar ******************************/
 
@@ -240,7 +266,7 @@ body.stop-scrolling {
 }
 
 .subscribe .email {
-  border-color: var(--cyen-color) !important; 
+  border-color: var(--cyen-color) !important;
 }
 
 .subscribe .email:focus {
